@@ -1,0 +1,71 @@
+// arr console
+let arr = [1,2,3,4,5]
+console.log(arr)
+
+//access first and last element
+let arr = [1,2,3,4,5]
+
+console.log(`First element: ${arr[0]}`)
+console.log(`Last element: ${arr.length-1}`)
+
+//arr push
+let arr = [1,2,3,4,5]
+arr.push(6)
+console.log(arr)
+
+// arr pop
+let arr = [1,2,3,4,5]
+arr.pop(5)
+console.log(arr)
+
+//arr shift
+let arr = [1,2,3,4,5]
+arr.shift()
+console.log(arr)
+
+//arr unshift
+let arr = [1,2,3,4,5]
+arr.unshift("hello")
+console.log(arr)
+
+//arr map to create new arr with doubled value return
+let arr = [1,2,3,4,5]
+const doubledNum = arr.map((nums) => nums * 2)
+
+console.log(doubledNum)
+
+//return even nums using filter
+let arr = [1,2,3,4,5,6,7,8,9,10]
+const evenNum = arr.filter((nums) => nums%2===0)
+
+console.log(evenNum)
+
+//use reduce to calculate sum of arr 
+let arr = [1,2,3,4,5]
+const sum = arr.reduce((sums, nums) => sums + nums,0)
+
+console.log(sum)
+
+//use for loop to iterate to array
+let arr = [1,2,3,4,5,6,7,8,9,10]
+for(let i=0;i<arr.length;i++)
+  {
+    console.log(arr[i])
+  }
+
+
+//using foreact to iterate to array
+let arr = [1,2,3,4,5,6,7,8,9,10]
+ arr.forEach((nums)=>{
+   console.log(nums)
+ })
+
+
+//matrix
+let matrix = [[1,2,3], [4,5,6]]
+console.log(matrix)
+
+//accessing specific matrix element.
+let matrix = [[1,2,3], [4,5,6]]
+console.log(`Elements at [0][0] is: ${matrix[0][0]}`)
+

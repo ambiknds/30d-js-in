@@ -1,0 +1,102 @@
+//change textcontent using id
+let paragraph = document.getElementById("para")
+let btn = document.getElementById("btn")
+btn.addEventListener('click', ()=>{
+  paragraph.innerText = "Hello World Success"
+})
+
+//change bgcolor
+let body = document.getElementsByTagName('body')
+let bgbtn = document.getElementById('bgbtn')
+bgbtn.addEventListener('click', ()=>{
+  body[0].style.backgroundColor = "lightcoral"
+})
+//append div child
+let newDiv = document.createElement('div')
+newDiv.textContent="This is a new div created by javascript."
+document.body.appendChild(newDiv)
+
+//append li to an exixting ul
+let ulist = document.getElementById('ulist');
+let list1 = document.createElement('li');
+list1.textContent = "This is a first appended list item";
+ulist.appendChild(list1);
+
+//remove selected html element
+
+let rmparagraph = document.getElementById("toremove")
+let rmbtn = document.getElementById("rmbtn")
+rmbtn.addEventListener('click', ()=>{
+ rmparagraph.remove();
+})
+
+//remove last child of html element
+
+function removeLastChild(){
+  let myList = document.getElementById('myList');
+    myList.removeChild(myList.lastElementChild)
+}
+function changeImage(){
+  let image = document.getElementById('image');
+  image.src = "https://images.pexels.com/photos/25548962/pexels-photo-25548962/free-photo-of-a-dirt-road-with-a-fence-and-a-gate.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load";
+}
+
+//add/remove class
+let myPaaragraph = document.getElementById("myParagraph");
+
+function addClass(){
+  myPaaragraph.classList.add( "add-class")
+}
+function removeClass(){
+  myPaaragraph.classList.remove("add-class")
+}
+
+//change textcontent using click event listener
+let paragraph2 = document.getElementById("paragraph2")
+let btn2 = document.getElementById("btn3")
+btn2.addEventListener('click', ()=>{
+  paragraph.innerText = "Change text Success"
+})
+
+//change border color using mouse event listener
+let paragraph2 = document.getElementById("paragraph2")
+paragraph2.addEventListener('mouseover', ()=>{
+  paragraph2.style.border= "2px solid red"
+})
+
+
+//html code
+
+<p id="para">This is a test</p>
+<button id="btn">Change Text</button>
+<button id="bgbtn">Change Background</button>
+
+
+
+<ul id="ulist"></ul>
+
+
+</div>
+<p id="toremove">Remove this paragraph</p>
+<button id="rmbtn">Remove paragraph</button>
+
+<ul id="myList">
+<li>First Item</li>
+<li>Second Item</li>
+<li>Third Item</li>
+</ul>
+<button onclick="removeLastChild()">Remove Last Item</button>
+<br/>
+<img id="image" src="https://images.pexels.com/photos/20740978/pexels-photo-20740978/free-photo-of-silhouettes-of-trees-growing-on-sea-shore-at-sunset.png?auto=compress&cs=tinysrgb&w=600&lazy=load" width="100px" />
+<button onclick="changeImage()">Change Image</button>
+
+<p id="myParagraph">This is a paragraph with add and remove class option.</p>
+<button onclick="addClass()">Add Class</button>
+<button onclick="removeClass()">Remove Class</button>
+
+<p id="paragraph">Hello World</p>
+<button id="btn3">Change text</button>
+
+<p id="paragraph2">Hover here and borfer color will change.</p>
+
+

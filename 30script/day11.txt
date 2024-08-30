@@ -1,0 +1,111 @@
+//resolve promise
+let promises = new Promise(function(resolve,reject){
+  setTimeout(function(){
+    resolve("Success");
+  },2000);
+})
+promises.then(function(message){
+  console.log(message);
+})
+
+//failed promise using c.catch
+let promises = new Promise(function(resolve,reject){
+  setTimeout(function(){
+    reject("Failed");
+  },2000);
+})
+promises.then(function(message){
+  console.log(message);
+})
+promises.catch(function(error){
+  console.log("Error occur",error);
+})
+
+//chaining Promises
+function fetchData(data, delay){
+  return new Promise((resolve)=>{
+    setTimeout(()=>{
+      resolve(data);
+    }, delay)
+  })
+}
+
+fetchData('First Data', 1000)
+.then((data)=>{
+  console.log(data);
+  return fetchData('Second Data', 2000);
+})
+.then((data)=>{
+  console.log(data);
+  return fetchData('Third Data', 2000);
+})
+.then((data)=>{
+  console.log(data);
+  return fetchData('Fourth Data', 2000);
+})
+.then((data)=>{
+  console.log(data);
+})
+
+//async await function that resolve
+
+async function waitPromise(){
+  const newPromise = new Promise((resolve) =>{
+    setTimeout(() =>{
+      resolve("Promise Resolved!")
+    }, 2000)
+  })
+  const resolvedValue = await newPromise
+  console.log(resolvedValue)
+}
+waitPromise();
+
+//async await function that reject
+async function handleRejectPromise(){
+  const myPromise = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+      reject("Promise rejected")
+    }, 2000)
+  })
+  try{
+    const result = await myPromise
+    console.log("Promise resolve: ", result)
+  }
+  catch(error){
+   console.log("Rejected: ", error)   
+  }
+}
+handleRejectPromise()
+
+//use fetch API to get data from a public API and log response data to the console using promises.
+fetch("https://jsonplaceholder.typicode.com/todos")
+.then((response)=>{
+  return response.json()
+})
+.then((data)=>{
+  new Promise((resolve)=>{
+    setTimeout(()=>{
+      resolve(console.log(data))
+    },2000)
+})
+  })
+
+//use fetch API to get data from a public API and log response data to the console using async await
+async function fetchData(){ 
+  await fetch("https://jsonplaceholder.typicode.com/todos/1")
+.then((response)=>{
+  return response.json()
+})
+.then((data)=>{
+    setTimeout(()=>{
+      console.log(data)
+    },2000)
+})
+
+.catch((error)=>{
+  console.log(error)
+})
+}
+fetchData()
+
+//

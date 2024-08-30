@@ -1,0 +1,129 @@
+// object
+let Book = {
+    title: "30 Days of JS",
+    author: "Hitesh",
+    year: 2024
+}
+console.log(Book);
+
+//speciific obj log
+let Book = {
+    title: "30 Days of JS",
+    author: "Hitesh",
+    year: 2024
+}
+console.log(`Author: ${Book.author}`);
+console.log(`Title: ${Book.title}`);
+
+//book method for title and author
+let Book = {
+    title: "30 Days of JS",
+    author: "Hitesh",
+    methods: function() {
+        console.log(`Title: ${Book.title}, Author: ${Book.author}`)
+    }
+}
+Book.methods()
+
+//book method to add year and updated it.
+let Book = {
+    title: "30 Days of JS",
+    author: "Hitesh",
+    year: 2023,
+    methods: function() {
+        console.log(`Title: ${this.title}, Author: ${this.author} `)
+    },
+    updateYear: function(newYear) {
+        this.year = newYear;
+    }
+}
+console.log("Book", Book)
+Book.updateYear(2024)
+
+console.log("Updated book", Book)
+
+//nested object
+let library = {
+    name: "My book Library",
+    books: [
+        {
+            title: "Book 1",
+            author: "Author A",
+            year: 2021
+        },
+        {
+            title: "Book 2",
+            author: "Author B",
+            year: 2022
+        },
+        {
+            title: "Book 3",
+            author: "Author C",
+            year: 2023
+        }
+    ]
+};
+console.log(library);
+
+//access library name and books title
+let library = {
+    name: "My book Library",
+    books: [
+        {
+            title: "Book 1",
+            author: "Author A",
+            year: 2021
+        },
+        {
+            title: "Book 2",
+            author: "Author B",
+            year: 2022
+        },
+        {
+            title: "Book 3",
+            author: "Author C",
+            year: 2023
+        }
+    ]
+};
+
+
+console.log(`Library name: ${library.name}`);
+
+for (let i = 0; i < library.books.length; i++) {
+    console.log(`Book ${i} Title: ${library.books[i].title}`);
+}
+
+
+//using this keyword
+let Book = {
+    title: "30 Days of JS",
+    author: "Hitesh",
+    methods: function() {
+        console.log(`Title: ${this.title}, Author: ${this.author}`)
+    }
+}
+Book.methods()
+
+//using for in loop
+let Book = {
+    title: "30 Days of JS",
+    author: "Hitesh",
+    year: 2024
+}
+for (let detail in Book) {
+    console.log(`${detail}: ${Book[detail]}`)
+}
+
+//Object keys and values
+let Book = {
+    title: "30 Days of JS",
+    author: "Hitesh",
+    year: 2024
+}
+
+let keys = Object.keys(Book);
+console.log('Keys: ', keys);
+
+let values = Object.values(Book);
+console.log('Values: ', values);

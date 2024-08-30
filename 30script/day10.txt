@@ -1,0 +1,113 @@
+//paragraph change using clickevent listener
+let paragraph = document.getElementById("para")
+let btn = document.getElementById("btn")
+btn.addEventListener('click', ()=>{
+  paragraph.innerText = "Hello World Success"
+})
+
+//double click liistener
+let image1 = document.getElementById("image")
+
+image1.addEventListener('dblclick', ()=>{
+  image1.style.visibility="hidden"
+})
+
+//mouserover event listener 
+let para = document.getElementById("para");
+para.addEventListener('mouseover', function() {
+  para.style.backgroundColor = 'lightcoral';
+})
+
+//mouse out event listener
+let para = document.getElementById("para");
+para.addEventListener('mouseover', function() {
+  para.style.backgroundColor = 'lightcoral';
+})
+para.addEventListener('mouseout', function() {
+  para.style.backgroundColor = '';
+})
+
+//keydown event listener 
+let input = document.getElementById('input');
+input.addEventListener('keydown', (event) => {
+  console.log("Key Pressed: ", event.key);
+})
+
+//keyup event listener to display value
+let input = document.getElementById('input');
+let output = document.getElementById('output');
+input.addEventListener('keyup', (event) => {
+  output.textContent = event.target.value;
+})
+
+//prevent default at submit
+let myForm = document.getElementById("myForm")
+let input2 = document.getElementById("input2")
+myForm.addEventListener("submit", (event)=>{
+  event.preventDefault()
+  console.log("Form Data: ", input2.value)
+})
+
+//dropdown change listener
+const myDropdown = document.getElementById("myDropdown");
+const output2 = document.getElementById("output2");
+
+myDropdown.addEventListener('change', (event) => {
+  output2.textContent = event.target.value;
+})
+
+//click event listenet that logs list
+let myList = document.getElementById('myList');
+myList.addEventListener('click', function(event) {
+  if(event.target.tagName === 'LI'){
+    console.log(event.target.textContent);
+  }
+})
+
+//let parent = document.getElementById("parent");
+let addButton = document.getElementById("addButton");
+
+parent.addEventListener("click", function(event) {
+  if(event.target.tagName === "P"){
+      console.log("Clicked para: ", event.target.textContent);
+  }
+})
+addButton.addEventListener("click", function(){
+  let newPara = document.createElement("p");
+  newPara.textContent = "New Paragraph";
+  parent.appendChild(newPara);
+ 
+})
+
+
+//html code
+
+<p id="para">This is a test Paragraph</p>
+
+    <input type="text" id="input" placeholder="Type here"/>
+    <p id="output"></p>
+
+    <form id="myForm">
+      <input type="text" id="input2" placeholder="Type here"/>
+      <input type="submit" id="submit" value="Submit"/>
+    </form>
+<hr/>
+    <select id="myDropdown">
+      <option >Select</option>
+      <option value="option1">Option 1</option>
+      <option value="option2">Option 2</option>
+      <option value="option3">Option 3</option>
+    </select>
+    <p id="output2"></p>
+    <hr />
+
+    <ul id="myList">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <hr/>
+    <div id="parent"></div>
+    <button id="addButton" type="submit">Add Item</button>
+
+

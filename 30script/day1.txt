@@ -1,0 +1,45 @@
+var num = 2024;
+console.log(num)
+let name1 = "Ashish";
+console.log(name1)
+const decide = true;
+console.log(decide)
+console.log(typeof(num))
+console.log(typeof(name1))
+console.log(typeof(decide))
+// let name1 = "James"
+// console.log(name1)
+
+const decide = false
+console.log(decide)
+
+// String
+let name = "Alice";
+console.log(`name: ${name}, type: ${typeof name}`);
+
+// Number
+let age = 30;
+console.log(`age: ${age}, type: ${typeof age}`);
+
+// Boolean
+let isStudent = true;
+console.log(`isStudent: ${isStudent}, type: ${typeof isStudent}`);
+
+// Array
+let colors = ["red", "green", "blue"];
+console.log(`colors: ${colors}, type: ${typeof colors}`);
+
+// Object
+let person = {
+  firstName: "Bob",
+  lastName: "Smith",
+};
+console.log(`person: ${person}, type: ${typeof person}`);
+
+// Null
+let emptyValue = null;
+console.log(`emptyValue: ${emptyValue}, type: ${typeof emptyValue}`);
+
+// Undefined
+let undefinedValue;
+console.log(`undefinedValue: ${undefinedValue}, type: ${typeof undefinedValue}`);

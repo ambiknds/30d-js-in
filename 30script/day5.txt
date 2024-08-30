@@ -1,0 +1,95 @@
+//check odd even
+function oddEven(num1){
+  if(num1%2==0){
+    console.log("Even")
+  }else{
+    console.log("Odd")
+  }
+}
+oddEven(56)
+
+//square of a number
+function square(num2) {
+ console.log(num2 * num2);
+}
+square(7)
+
+//maximum of two numbers
+function maximum(num1, num2){
+  if(num1>num2){
+    return num1
+  }else{
+    return num2
+  }
+}
+
+let a=4
+let b=5
+
+let max = maximum(a,b)
+console.log(`The maximum of ${a} and ${b} is: ${max}`);
+
+//concatenate 2 string
+function concat(str1, str2){
+  return str1 + str2
+}
+let concatstring = concat("Hello ", "World")
+console.log(concatstring)
+
+//sum using arrow function
+let sum = (num1, num2) => {
+  return num1 + num2
+}
+console.log(sum(2, 3))
+
+//check if string contain a specific character
+let charCheck =  (str, char) =>{
+  return str.includes(char)
+}
+console.log(charCheck("hello","e"))
+
+//product with def param
+function product(num1, num2=4){
+  return num1*num2
+}
+console.log(product(5))
+
+//greet
+function greet(name,age=25){
+  return "Hello " + name + " you are " + age + " years old."
+}
+console.log(greet("John"))
+
+//higher order function
+function higherOrder(func, number) {
+  for(let i=1;i<=number;i++){
+    func(i)
+  }
+}
+function squared(num){
+  console.log(num*num)
+}
+
+higherOrder(squared,5)
+
+function logMessage(num){
+  console.log("Hello World " + num)
+}
+higherOrder(logMessage,4)
+
+//high order function
+function highFunction(func1, func2, value){
+  let result = func1(value);
+
+  return func2(result)
+}
+
+function add(num){
+  return num + 3
+}
+function subtract(num){
+  return num - 2
+}
+
+let result = highFunction(add, subtract, 5)
+console.log(result)

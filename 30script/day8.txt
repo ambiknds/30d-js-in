@@ -1,0 +1,78 @@
+//template literal
+let name = "Leonard"
+let age = "28"
+
+console.log(`Name is ${name} and Age is ${age}`)
+
+//multi-line string literal
+let message = `Hello welcome to 30 days of javascript.
+This is a journey from zero to expert.
+So learner, don't be scared.
+I am also learning and practiing.`
+
+console.log(message)
+
+//array destructuring
+let [a,b,c,d,e] = [1,2,3,4,5]
+console.log(a,b)
+
+
+//object destructuring
+let book = {
+  title: "30 Days of JS",
+  author: "Hitesh",
+  year: 2024
+}
+
+let {title, author} = book
+console.log(title)
+console.log(author)
+
+//Spread operator
+let arr = [1,2,3]
+
+let newArr = [...arr, 4,5,6]
+console.log(newArr)
+
+//use rest operator to calculate sum
+function sum(...numbers){
+  let total = 0;
+  for(let i=0; i<numbers.length; i++){
+    total+=numbers[i]
+  }
+  return total;
+}
+console.log(sum(1,2,3,4,5))
+console.log(sum(1,2,3))
+
+//function with default parameter
+function product(a,b=1){
+  return a*b
+}
+console.log(product(2, 3))
+console.log(product(2))
+
+//enhanced object literal with property and method
+const name = 'Alice';
+const age = 30;
+const city = 'New York';
+
+const person = {
+  name, age, city,
+  greeting(){
+    console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and I live in ${city}`)
+  }
+}
+
+person.greeting()
+
+//object with computed property name
+
+let name='username'
+let age='age'
+
+let person={
+  [name]: 'AlexaTime',
+  [age]: '20'
+}
+console.log(person)
